@@ -1,4 +1,5 @@
-/* Общие настройки */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +7,9 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    background-color: #fafafa;
+    background-color: #fefbd8; /* Нежный желтый фон */
     color: #333;
 }
 
@@ -16,15 +17,18 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #fffdf3; /* Более светлый бежевый оттенок */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Заголовок страницы */
 header {
-    background-color: #ff6b6b;
+    background-color: #FFD54F; /* Яркий оранжевый заголовок */
     color: white;
     text-align: center;
     padding: 20px;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 h1 {
@@ -32,42 +36,80 @@ h1 {
     margin: 0;
 }
 
-/* Основной контент */
-main {
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
-article {
-    margin-bottom: 20px;
-}
-
-/* Изображение рецепта */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px;
-}
-
-/* Инструкции приготовления */
 ol {
     list-style-type: decimal;
     padding-left: 20px;
 }
 
-/* Подвал сайта */
+aside {
+    background-color: #ffeab7; /* Светло-персиковый боковик */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-style: italic;
+    color: #666;
+}
+
 footer {
-    background-color: #ff6b6b;
+    background-color: #FFD54F;
     color: white;
     text-align: center;
     padding: 10px;
-    position: relative;
+    position: fixed;
+    left: 0;
+    right: 0;
     bottom: 0;
-    width: 100%;
+    z-index: 1000;
 }
 
-footer p {
-    margin: 0;
+/* Эффекты и плавность переходов */
+h2::before,
+h2::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 1px;
+    background-color: #FFD54F;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+a {
+    color: #FFD54F;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ffaa00;
+    text-decoration: none;
+}
+
+/* Дополнительные украшения */
+li {
+    animation-name: fadeInListItem;
+    animation-duration: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInListItem {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+ol li:nth-child(even) {
+    background-color: #fffdf3;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+ol li:nth-child(odd) {
+    background-color: transparent;
 }
